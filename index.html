@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SchooLearn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;900&display=swap" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <div class="header__container">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="#" class="nav__logo">
+                        <img src="image/index/logo.svg" width="192" height="34" alt="img1">
+                    </a>
+                </div>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="#">О нас</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#">Соревнование</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#">Рейтинг</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#">FAQ</a>
+                    </li>
+                </ul>
+                <div class="nav__account-box">
+                    <a href="#" class="nav__account">
+                        <p class="nav__account-nickname">nickname00001</p>
+                    </a>
+                    <button class="button-0 nav__account-authorization" onclick="openForm()" id="inputForm">
+                        <span class="nav__account-btn">Войти</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="form" id="form">
+            <form class="form__box" id="form__box">
+                <div class="form__input">
+                    <label>
+                        <input type="text" name="nickname" required="required">
+                        <span class="form__text">Никнейм:</span>
+                    </label>
+                </div>
+                <div class="form__input">
+                    <label>
+                        <input type="password" name="password" required="required">
+                        <span class="form__text">Пароль:</span>
+                    </label>
+                </div>
+                <button class="form__button" type="submit">Отправить</button>
+                <span class="msg"></span>
+            </form>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="container">
+        <div class="greeting__img">
+            <img src="image/index/indexImage.svg" width="409.5" height="359.1" alt="image">
+        </div>
+        <div class="greeting__container">
+            <div class="greeting-text">
+                <p>Приумножьте ваши знания и участвуйте в соревновании</p>
+            </div>
+            <a class="greeting__registration" href="#">
+                <div class="registration">
+                    <p>Зарегистрироваться</p>
+                </div>
+            </a>
+            <h2 class = "greeting__title">Что можно здесь делать?</h2>
+            <ul class = "greeting__list">
+                <li class="greeting__item">
+                    Заработать дополнительные <br> баллы
+                </li>
+                <li class="greeting__item">
+                    Посмотреть место в рейтинге
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer__wrapper">
+        <div class="container">
+            <p class = "footer__contacts">Наши контакты</p>
+            <a class = "footer__email" href="#">Почта: schoolearn@mail.ru</a>
+            <div class="footer__list-box">
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">О нас</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">Соревнование</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">Рейтинг</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/home.js"></script>
+</body>
+</html>

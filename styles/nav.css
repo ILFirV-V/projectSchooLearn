@@ -1,0 +1,79 @@
+.main-nav {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.logo {
+    width: 192px;
+    height: 34px;
+    margin: 0;
+    margin-right: 57px;
+}
+
+.nav__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav__item {
+    margin-right: 78px;
+}
+
+.site-navigation-item:last-child {
+    margin-right: 0;
+}
+
+.nav__account-box {
+    width: 330px;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav__item a {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+}
+
+.nav__item .active-item {
+    color: #f79727;
+}
+
+.nav__item a:hover {
+    color: #f79727;
+}
+
+.nav__item a:active {
+    color: rgba(247, 151, 39, 0.7);
+}
+
+.nav__account {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+}
+
+.nav__account-authorization {
+    cursor: pointer;
+    margin-left: 30px;
+    border: 1px solid #B169F3;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    background: #FFFFFF;
+}
+
+.nav__account-authorization span {
+    margin: 5px 30px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #C792F8;
+}

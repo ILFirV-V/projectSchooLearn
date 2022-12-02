@@ -1,0 +1,56 @@
+.greeting__container {
+    padding: 100px 0;
+}
+
+.greeting__img {
+    display: flex;
+    justify-content: right;
+}
+
+.greeting__img img {
+    z-index: -1;
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 50%;
+    margin-top: 180px;
+}
+
+.greeting-text {
+    margin-bottom: 65px;
+    width: 850px;
+}
+
+.greeting-text p {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 102px;
+    color: #000000;
+}
+
+.registration p{
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #0A0C1B;
+}
+
+.greeting__title {
+    margin-top: 75px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 56px;
+    color: #080F1D;
+}
+
+.greeting__list {
+    list-style: inherit;
+    padding-left: 25px;
+}
+
+.greeting__item {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    color: #D36BC9;
+}

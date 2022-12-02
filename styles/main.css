@@ -1,0 +1,39 @@
+@import 'header.css';
+@import 'nav.css';
+@import 'form.css';
+@import 'greeting.css';
+@import 'registration.css';
+@import 'footer.css';
+
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    width: 1440px;
+    padding: 0 108px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}

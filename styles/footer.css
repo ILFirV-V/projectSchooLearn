@@ -1,0 +1,39 @@
+.footer__wrapper {
+    padding: 50px 30px 60px;
+    width: 100%;
+    margin: 0 auto;
+    background: #0C0919;
+}
+
+.footer__contacts {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 56px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.footer__email {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.footer__list {
+    padding: 0;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.footer__link {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
