@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SchooLearn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;900&display=swap" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="header__container">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">
+          <a href="index.html" class="nav__logo">
+            <img src="image/index/logo.svg" width="192" height="34" alt="img1">
+          </a>
+        </div>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#">О нас</a>
+          </li>
+          <li class="nav__item">
+            <a href="competition.html">Соревнование</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Рейтинг</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+        <div class="nav__account-box">
+          <a href="#" class="nav__account">
+            <p class="nav__account-nickname">nickname00001</p>
+          </a>
+          <button class="button-0 nav__account-authorization" onclick="openForm()" id="inputForm">
+            <span class="nav__account-btn">Войти</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div class="form" id="form">
+      <form class="form__box" id="form__box">
+        <div class="form__input">
+          <label>
+            <input type="text" name="nickname" required="required">
+            <span class="form__text">Никнейм:</span>
+          </label>
+        </div>
+        <div class="form__input">
+          <label>
+            <input type="password" name="password" required="required">
+            <span class="form__text">Пароль:</span>
+          </label>
+        </div>
+        <button class="form__button" type="submit">Отправить</button>
+        <span class="msg"></span>
+      </form>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <section class="about">
+      <div class="about-text">
+        <h1>Что такое SchooLearn?</h1>
+        <p>Площадка для учеников - место, в котором можно получить дополнительные оценки в успеваемость,
+          потренироваться в решении интересных задач и посоревноваться со сверстниками</p>
+      </div>
+      <div class="about-img">
+        <img src="image/aboutUs/aboutUs_1.svg" width="511" height="422" alt="image">
+      </div>
+    </section>
+    <section class="lessons">
+      <h2>Какие учебные предметы есть на платформе?</h2>
+      <ul class="lessons-list">
+        <li class="lesson">
+          <img src="image/aboutUs/aboutUs_2.svg" alt="image">
+          <div class="lesson-button-wrapper">
+            <a class="greeting__registration" href="#">
+              <div class="registration">
+                <p>Математика</p>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="lesson">
+          <img class="image-3" src="image/aboutUs/aboutUs_3.svg" alt="image">
+          <div class="lesson-button-wrapper">
+            <a class="greeting__registration" href="#">
+              <div class="registration">
+                <p>Информатика</p>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <p class="supply">Мы предлагаем более …… задач для решения.
+        Попробуйте себя в их реализации и следите за местом в рейтинге*</p>
+    </section>
+    <section class="rating">
+      <img src="image/aboutUs/aboutUs_4.svg" alt="image">
+      <div class="rating-text">
+        <h2>Что даёт рейтинг?</h2>
+        <ul>
+          <li>чувство удовлетворения от проделанной работы</li>
+          <li>наглядность результатов</li>
+          <li>мотивацию становиться лучше</li>
+        </ul>
+      </div>
+    </section>
+    <section class="why">
+      <p>Вы наверняка задались вопросом, что лично
+        Вы получите от участия в соревнованиях и зачем лично Вам нужен рейтинг
+      </p>
+      <div>
+        <p>За первые места в рейтинге Вы получите</p>
+        <p>✨денежное вознаграждение✨</p>
+      </div>
+      <p>Желаем Вам большой удачи!</p>
+      <p>Никогда не сомневайтесь в себе, Вы сможете всё!</p>
+      <p>*рейтинг формируется на основе баллов, полученных в ходе решения предложенных на платформе задач</p>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer__wrapper">
+    <div class="container">
+      <p class = "footer__contacts">Наши контакты</p>
+      <a class = "footer__email" href="#">Почта: schoolearn@mail.ru</a>
+      <div class="footer__list-box">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a class="footer__link" href="#">О нас</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="competition.html">Соревнование</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Рейтинг</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/home.js"></script>
+</body>
+</html>
