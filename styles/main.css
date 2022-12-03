@@ -4,6 +4,9 @@
 @import 'greeting.css';
 @import 'registration.css';
 @import 'footer.css';
+@import 'competition.css';
+@import 'about.css';
+
 
 body {
     margin: 0;

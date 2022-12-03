@@ -1,0 +1,39 @@
+.participation__container {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.participation__text-1 {
+    width: 28%;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 63px;
+    color: #090815;
+    padding-bottom: 100px;
+}
+
+.participation__text-2 {
+    width: 28%;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 63px;
+    color: #D36BC9;
+    padding-top: 125px;
+}
+
+.participation__svg-1 {
+    padding: 100px 0;
+}
+
+.participation__svg-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.participation__box {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 125px;
+    padding-bottom: 50px;
+}

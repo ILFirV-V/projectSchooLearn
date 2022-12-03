@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SchooLearn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;900&display=swap" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="header__container">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">
+          <a href="index.html" class="nav__logo">
+            <img src="image/index/logo.svg" width="192" height="34" alt="img1">
+          </a>
+        </div>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#">О нас</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Соревнование</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">Рейтинг</a>
+          </li>
+          <li class="nav__item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+        <div class="nav__account-box">
+          <a href="#" class="nav__account">
+            <p class="nav__account-nickname">nickname00001</p>
+          </a>
+          <button class="button-0 nav__account-authorization" onclick="openForm()" id="inputForm">
+            <span class="nav__account-btn">Войти</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div class="form" id="form">
+      <form class="form__box" id="form__box">
+        <div class="form__input">
+          <label>
+            <input type="text" name="nickname" required="required">
+            <span class="form__text">Никнейм:</span>
+          </label>
+        </div>
+        <div class="form__input">
+          <label>
+            <input type="password" name="password" required="required">
+            <span class="form__text">Пароль:</span>
+          </label>
+        </div>
+        <button class="form__button" type="submit">Отправить</button>
+        <span class="msg"></span>
+      </form>
+    </div>
+  </div>
+</header>
+<main class="participation">
+  <div class="container">
+    <div class="participation__container">
+      <div class="participation__box">
+        <div class="participation__text-1">
+          <p>Примите участие в соревновании</p>
+        </div>
+        <div  class="participation__svg-1">
+          <svg width="129" height="80" viewBox="0 0 129 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.2" d="M102.789 44.3418L104.06 43.5455L102.789 44.3418ZM123.244 78.994C124.052 79.1795 124.857 78.6753 125.042 77.8679L128.064 64.7105C128.25 63.9031 127.745 63.0982 126.938 62.9128C126.131 62.7273 125.326 63.2315 125.14 64.0389L122.454 75.7344L110.759 73.0481C109.951 72.8626 109.146 73.3668 108.961 74.1742C108.775 74.9816 109.28 75.7865 110.087 75.9719L123.244 78.994ZM0.330301 3.47311L56.3786 14.2305L56.9441 11.2843L0.895773 0.526888L0.330301 3.47311ZM101.518 45.1381L122.309 78.3284L124.851 76.7358L104.06 43.5455L101.518 45.1381ZM56.3786 14.2305C75.0645 17.8169 91.4168 29.0137 101.518 45.1381L104.06 43.5455C93.5168 26.7149 76.4483 15.0278 56.9441 11.2843L56.3786 14.2305Z" fill="#2C0027"/>
+          </svg>
+        </div>
+        <div class="participation__text-2">
+          <p>Получите баллы</p>
+        </div>
+      </div>
+      <div  class="participation__svg-2">
+        <svg width="125" height="87" viewBox="0 0 125 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.2" d="M24.4283 50.8269L25.7481 51.5398L24.4283 50.8269ZM6.24421 86.7232C5.4504 86.9603 4.61476 86.5089 4.37776 85.7151L0.515532 72.7794C0.278528 71.9856 0.729901 71.1499 1.5237 70.9129C2.31751 70.6759 3.15314 71.1273 3.39015 71.9211L6.82323 83.4195L18.3217 79.9864C19.1155 79.7494 19.9511 80.2008 20.1881 80.9946C20.4251 81.7884 19.9737 82.624 19.1799 82.861L6.24421 86.7232ZM124.045 3.45187L68.8053 17.7925L68.0514 14.8888L123.292 0.548127L124.045 3.45187ZM25.7481 51.5398L7.13484 85.9988L4.49529 84.5731L23.1085 50.114L25.7481 51.5398ZM68.8053 17.7925C50.3888 22.5735 34.7907 34.799 25.7481 51.5398L23.1085 50.114C32.5472 32.6401 48.8285 19.8792 68.0514 14.8888L68.8053 17.7925Z" fill="#2C0027"/>
+        </svg>
+      </div>
+      <div class="participation__box">
+        <div class="participation__text-1">
+          <p>Получите дополнительную оценку</p>
+        </div>
+        <div  class="participation__svg-1">
+          <svg class="participation__svg-3" width="129" height="80" viewBox="0 0 129 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.2" d="M102.789 44.3418L104.06 43.5455L102.789 44.3418ZM123.244 78.994C124.052 79.1795 124.857 78.6753 125.042 77.8679L128.064 64.7105C128.25 63.9031 127.745 63.0982 126.938 62.9128C126.131 62.7273 125.326 63.2315 125.14 64.0389L122.454 75.7344L110.759 73.0481C109.951 72.8626 109.146 73.3668 108.961 74.1742C108.775 74.9816 109.28 75.7865 110.087 75.9719L123.244 78.994ZM0.330301 3.47311L56.3786 14.2305L56.9441 11.2843L0.895773 0.526888L0.330301 3.47311ZM101.518 45.1381L122.309 78.3284L124.851 76.7358L104.06 43.5455L101.518 45.1381ZM56.3786 14.2305C75.0645 17.8169 91.4168 29.0137 101.518 45.1381L104.06 43.5455C93.5168 26.7149 76.4483 15.0278 56.9441 11.2843L56.3786 14.2305Z" fill="#2C0027"/>
+          </svg>
+        </div>
+        <div class="participation__text-2">
+          <p>Радуйтесь месту в рейтинге</p>
+        </div>
+      </div>
+      <div>
+        <a href="#">
+          <div class="registration">
+            <p>Участвовать</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer__wrapper">
+    <div class="container">
+      <p class = "footer__contacts">Наши контакты</p>
+      <a class = "footer__email" href="#">Почта: schoolearn@mail.ru</a>
+      <div class="footer__list-box">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a class="footer__link" href="#">О нас</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Соревнование</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Рейтинг</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/home.js"></script>
+</body>
+</html>

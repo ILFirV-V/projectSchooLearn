@@ -1,0 +1,108 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+
+.about-text h1 {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 85px;
+    color: #090815;
+}
+
+.about-text p {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+    color: #5E0155;
+
+    margin-top: 100px;
+}
+
+
+
+.lessons {
+    margin-bottom: 100px;
+}
+
+.lessons h2 {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 56px;
+    color: #080F1D;
+
+    margin-bottom: 100px;
+}
+
+.lessons-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 120px;
+    margin-bottom: 100px;
+}
+
+.lesson {
+    width: 425px;
+    height: 470px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.lesson img {
+    margin-bottom: 50px;
+}
+
+.image-3 {
+    padding-top: 23px;
+}
+
+.supply {
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 56px;
+    text-align: center;
+
+    color: #080F1D;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px;
+    margin-bottom: 100px;
+}
+
+.rating-text h2 {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 56px;
+
+    color: #000000;
+    margin-bottom: 80px;
+}
+
+.rating-text ul {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+
+    color: #B169F3;
+}
+
+.rating-text li {
+    list-style: circle;
+    width: 550px;
+}
+
+
+.why {
+
+}
+
+/*.lesson-button-wrapper {*/
+/*    text-align: center;*/
+/*}*/
