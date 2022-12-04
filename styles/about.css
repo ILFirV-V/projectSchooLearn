@@ -103,6 +103,69 @@
 
 }
 
+.question {
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 56px;
+    text-align: center;
+
+    color: #080F1D;
+    margin-bottom: 100px;
+}
+
+.prize-text {
+    background: #D3AAF8;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 80px;
+    width: 975px;
+    margin: 0 auto;
+}
+
+.answer {
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 68px;
+    text-align: center;
+
+    color: #000000;
+    padding: 30px 132px;
+}
+
+.prize {
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 68px;
+    text-align: center;
+
+    color: #000000;
+    padding-bottom: 40px;
+}
+
+.why small {
+    display: block;
+    padding: 50px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+}
+
+.wishes {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #000000;
+    margin: 50px auto;
+    width: 1040px;
+    text-align: center;
+}
+
+.wishes-2 {
+    color: #5E0155;
+}
+
 /*.lesson-button-wrapper {*/
 /*    text-align: center;*/
 /*}*/

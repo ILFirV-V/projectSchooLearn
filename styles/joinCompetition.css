@@ -1,0 +1,24 @@
+.competition {
+    height: 950px;
+    padding: 100px 0;
+}
+
+.competition .title {
+    width: 500px;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 63px;
+
+    color: #090815;
+
+    margin-bottom: 40px;
+}
+
+.competition .text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 56px;
+
+    color: #080F1D;
+}
