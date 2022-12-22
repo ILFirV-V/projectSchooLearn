@@ -1,4 +1,4 @@
-.form_competition {
+.form-competition {
     position: absolute;
     display: none;
     /*right: 0;*/
@@ -18,11 +18,11 @@
     color: #000000;
 }
 
-.form_competition form p {
+.form-competition form p {
     margin-bottom: 25px;
 }
 
-.form_competition form button {
+.form-competition form button {
     width: 232px;
     padding: 25px;
     background: #E6E6E6;

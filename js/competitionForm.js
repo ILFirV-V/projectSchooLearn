@@ -2,7 +2,7 @@ const participateBtn = document.getElementById("participate");
 const participateForm = document.getElementById("form-participate");
 
 
-document.addEventListener('mousedown', closeForm);
+document.addEventListener('mousedown', participateCloseForm);
 
 participateBtn.addEventListener('click', async () => {
     if (participateBtn.disabled === false) {
@@ -10,9 +10,8 @@ participateBtn.addEventListener('click', async () => {
         participateBtn.disabled = true;
     }
 });
-// && participateBtn.disabled
-function closeForm(event) {
-    if(event.target.closest('.form_competition') === null && participateBtn.disabled){
+function participateCloseForm(event) {
+    if(event.target.closest('.form-competition') === null && participateBtn.disabled){
         participateForm.style.display = 'none';
         participateBtn.disabled = false;
     }
