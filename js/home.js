@@ -30,10 +30,9 @@ function serializeForm(formNode) {
 function handleFormSubmit(event) {
     event.preventDefault()
     const data = serializeForm(applicantForm)
-    console.log(data)
     sendRequest("POST", 'https://localhost:7238/api/Token', data)
         .then(data => console.log(data, "все хорошо"))
-        .catch(err => console.error(err, "все хорошо"))
+        .catch(err => console.error(err, "не все хорошо"))
 }
 
 // async function sendData(data) {
