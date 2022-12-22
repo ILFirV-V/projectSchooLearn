@@ -9,6 +9,7 @@
   <title>SchooLearn</title>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;900&display=swap" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
+  <link href="styles/FAQ.css" rel="stylesheet">
 </head>
 <body>
 <header class="header">
@@ -25,21 +26,22 @@
             <a class="nav__link" href="aboutUs.html">О нас</a>
           </li>
           <li class="nav__item">
-            <a href="competition.html">Соревнование</a>
+            <a href="#">Соревнование</a>
           </li>
           <li class="nav__item">
             <a href="#">Рейтинг</a>
           </li>
           <li class="nav__item">
-            <a href="#">FAQ</a>
+            <a href="FAQ.html">FAQ</a>
           </li>
         </ul>
         <div class="nav__account-box">
           <a href="#" class="nav__account">
             <p class="nav__account-nickname">nickname00001</p>
           </a>
-          <button class="button-0 nav__account-authorization" onclick="openForm()" id="inputForm">
-            <span class="nav__account-btn">Войти</span>
+          <button class="button-0 nav__account-authorization" id="inputForm">
+            <!--            <span class="nav__account-btn">-->
+            Войти
           </button>
         </div>
       </nav>
@@ -65,12 +67,22 @@
   </div>
 </header>
 <main>
-  <div class="container">
-    <section class="competition">
-      <p class="title">Вы участвуете в соревновании по Информатике</p>
-      <p class="text">Выберите тему</p>
-    </section>
-  </div>
+  <section class="container FAQ">
+    <div>
+      <h1>FAQ</h1>
+      <dl>
+        <dt>Вопрос 1</dt>
+        <dd>Ответ, пояснение</dd>
+        <dt>Вопрос 2</dt>
+        <dd>Ответ, пояснение</dd>
+        <dt>Вопрос 3</dt>
+        <dd>Ответ, пояснение</dd>
+      </dl>
+    </div>
+    <div class="about-img">
+      <img src="image/FAQ/FAQ_1.svg" alt="image_FAQ_1">
+    </div>
+  </section>
 </main>
 <footer class="footer">
   <div class="footer__wrapper">
@@ -83,7 +95,7 @@
             <a class="footer__link" href="aboutUs.html">О нас</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="competition.html">Соревнование</a>
+            <a class="footer__link" href="#">Соревнование</a>
           </li>
           <li class="footer__item">
             <a class="footer__link" href="#">Рейтинг</a>
@@ -97,5 +109,6 @@
   </div>
 </footer>
 <script src="js/home.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -5,10 +5,10 @@
 }
 
 .logo {
-    width: 192px;
-    height: 34px;
+    width: 200px;
+    height: 50px;
     margin: 0;
-    margin-right: 57px;
+    margin-right: 41px;
 }
 
 .nav__list {
@@ -68,12 +68,17 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     background: #FFFFFF;
-}
-
-.nav__account-authorization span {
-    margin: 5px 30px;
+    padding: 5px 30px;
     font-weight: 400;
     font-size: 22px;
     line-height: 27px;
     color: #C792F8;
 }
+
+/*.nav__account-authorization span {*/
+/*    margin: 5px 30px;*/
+/*    font-weight: 400;*/
+/*    font-size: 22px;*/
+/*    line-height: 27px;*/
+/*    color: #C792F8;*/
+/*}*/

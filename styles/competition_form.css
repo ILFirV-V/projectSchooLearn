@@ -1,0 +1,63 @@
+.form_competition {
+    position: absolute;
+    display: none;
+    /*right: 0;*/
+    margin-top: 20px;
+    /*width: 600px;*/
+    z-index: 1;
+    padding: 25px 21px;
+    background: #FFFFFF;
+    border: 2px solid #B5FBD6;
+    border-radius: 20px;
+    margin-right: 125px;
+
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+
+    color: #000000;
+}
+
+.form_competition form p {
+    margin-bottom: 25px;
+}
+
+.form_competition form button {
+    width: 232px;
+    padding: 25px;
+    background: #E6E6E6;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+/*.form .form__box .form__input label span {*/
+/*    position: absolute;*/
+/*    top: 14px;*/
+/*    left: 20px;*/
+/*    font-size: 22px;*/
+/*    transition: 0.6s;*/
+/*    font-family: sans-serif;*/
+/*    font-weight: 400;*/
+/*//line-height: 27px;*/
+
+/*    color: #000000;*/
+/*}*/
+
+/*.form__button {*/
+/*    padding: 10px;*/
+/*    border-radius: 10px;*/
+/*    font-size: 1.2em;*/
+/*    width: 50%;*/
+/*    height: 50px;*/
+/*    background: dodgerblue;*/
+/*    color: #fff;*/
+/*    border: #fff;*/
+/*}*/
+
+/*.form__button:hover {*/
+/*    background: linear-gradient(45deg, greenyellow, dodgerblue);*/
+/*}*/

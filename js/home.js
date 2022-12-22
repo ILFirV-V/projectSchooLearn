@@ -1,8 +1,12 @@
-const applicantForm = document.getElementById('form__box');
 const inputForm = document.getElementById("form");
 const btnOpenInputForm = document.getElementById("inputForm");
 document.addEventListener('mousedown', closeForm);
 
+
+btnOpenInputForm.addEventListener('click', async () => {
+    inputForm.style.display = "flex";
+    btnOpenInputForm.disabled = true;
+});
 
 function closeForm(event) {
     if(event.target.closest('.form') === null && btnOpenInputForm.disabled){
@@ -11,7 +15,8 @@ function closeForm(event) {
     }
 }
 
-function openForm() {
-    inputForm.style.display = "flex";
-    btnOpenInputForm.disabled = true;
-}
+// function openForm() {
+//     inputForm.style.display = "flex";
+//     btnOpenInputForm.disabled = true;
+// }
+

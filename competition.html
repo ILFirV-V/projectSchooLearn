@@ -9,6 +9,7 @@
   <title>SchooLearn</title>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;900&display=swap" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
+  <link href="styles/competition_form.css" rel="stylesheet">
 </head>
 <body>
 <header class="header">
@@ -17,7 +18,7 @@
       <nav class="main-nav">
         <div class="logo">
           <a href="index.html" class="nav__logo">
-            <img src="image/index/logo.svg" width="192" height="34" alt="img1">
+            <img src="image/index/logo.svg" width="200" height="50" alt="img1">
           </a>
         </div>
         <ul class="nav__list">
@@ -31,15 +32,16 @@
             <a href="#">Рейтинг</a>
           </li>
           <li class="nav__item">
-            <a href="#">FAQ</a>
+            <a href="FAQ.html">FAQ</a>
           </li>
         </ul>
         <div class="nav__account-box">
           <a href="#" class="nav__account">
             <p class="nav__account-nickname">nickname00001</p>
           </a>
-          <button class="button-0 nav__account-authorization" onclick="openForm()" id="inputForm">
-            <span class="nav__account-btn">Войти</span>
+          <button class="button-0 nav__account-authorization" id="inputForm">
+<!--            <span class="nav__account-btn">-->
+              Войти
           </button>
         </div>
       </nav>
@@ -98,12 +100,21 @@
           <p>Радуйтесь месту в рейтинге</p>
         </div>
       </div>
-      <div>
-        <a href="#">
-          <div class="registration">
-            <p>Участвовать</p>
-          </div>
-        </a>
+      <div class="btn-competition">
+          <button class="registration competition-participate" id="participate">
+                Участвовать
+          </button>
+      </div>
+      <div class="form_competition"  id="form-participate">
+        <form>
+          <p>Выбор предмета</p>
+          <button id="maths" type="button">
+            Математика
+          </button>
+          <button id="informatics" type="button">
+            Информатика
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -133,5 +144,10 @@
   </div>
 </footer>
 <script src="js/home.js"></script>
+<script src="js/main.js"></script>
+<script src="js/competition.js"></script>
+<script src="js/competitionForm.js"></script>
+
+
 </body>
 </html>
