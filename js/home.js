@@ -31,17 +31,41 @@ function handleFormSubmit(event) {
     event.preventDefault()
     const data = serializeForm(applicantForm)
     console.log(data)
-    sendData(data)
+    sendRequest("POST", 'https://localhost:7238/api/Token', data)
+        .then(data => console.log(data, "все хорошо"))
+        .catch(err => console.error(err, "все хорошо"))
 }
 
-async function sendData(data) {
+// async function sendData(data) {
+//     const headers = {
+//         'Content-Type': 'application/json'
+//     }
+//     return await fetch('https://localhost:7238/api/Token', {
+//         method: 'POST',
+//         headers: headers,
+//         body: data,
+//     })
+// }
+
+function sendRequest(method, url, body=null) {
     const headers = {
         'Content-Type': 'application/json'
     }
-    return await fetch('https://localhost:7238/api/Token', {
-        method: 'POST',
+
+    return fetch(url, {
+        method: method,
+        body: JSON.stringify(body),
         headers: headers,
-        body: data,
+    }).then(response => {
+        if (response.ok) {
+            return response.json()
+        }
+
+        return response.json().then(error => {
+            const e = new Error("Что-то пошло не так")
+            e.data = error
+            throw e
+        })
     })
 }
 
