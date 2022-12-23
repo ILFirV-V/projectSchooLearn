@@ -6,8 +6,11 @@ document.addEventListener('mousedown', checkCloseForm);
 
 
 btnOpenInputForm.addEventListener('click', async () => {
-    if (!(sessionStorage.getItem('entered') === "true")){
+    if (!(localStorage.getItem('entered') === "true")){
         openForm()
+    }
+    else {
+        exitStatus()
     }
 });
 
@@ -28,24 +31,25 @@ function closeForm() {
 }
 
 function exitStatus(){
+    localStorage.setItem('entered', "false")
     btnOpenInputForm.innerText = "Войти"
-    sessionStorage.setItem('nicknameText', "");
-    nickname.innerText = sessionStorage.getItem('nicknameText');
+    localStorage.setItem('nicknameText', "");
+    nickname.innerText = localStorage.getItem('nicknameText');
 }
 
 function openStatus(){
     btnOpenInputForm.innerText = "Выйти"
-    nickname.innerText = sessionStorage.getItem('nicknameText');
+    nickname.innerText = localStorage.getItem('nicknameText');
 }
 
-sessionStorage.setItem('nicknameText', "");
-sessionStorage.setItem('entered', "false");
+localStorage.setItem('nicknameText', "");
+localStorage.setItem('entered', "true");
 
 // let nicknameText = "default"
 // let entered = true;
 
 window.onload = function(){
-    if (sessionStorage.getItem('entered') === "true"){
+    if (localStorage.getItem('entered') === "true"){
         openStatus()
     }
     else {
@@ -68,7 +72,7 @@ function serializeForm(formNode) {
         .map((element) => {
             if (element.name === "login") {
                 data.login = element.value
-                sessionStorage.setItem('nicknameText', element.value);
+                localStorage.setItem('nicknameText', element.value);
             }
             else{
                 data.password = element.value
@@ -83,12 +87,12 @@ async function handleFormSubmit(event) {
     let data = serializeForm(event.target)
     const response = await sendData(data)
     if (response) {
-        sessionStorage.setItem('entered', "true");
+        localStorage.setItem('entered', "true");
         render(response)
-        sessionStorage.setItem('token', response);
+        localStorage.setItem('token', response);
     }
     else{
-        sessionStorage.setItem('nicknameText', "");
+        localStorage.setItem('nicknameText', "");
     }
 }
 
@@ -98,6 +102,7 @@ async function sendData(data) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
     })
+    console.log(result)
     return await result.json();
 }
 
