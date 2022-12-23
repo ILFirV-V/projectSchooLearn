@@ -4,6 +4,10 @@ const btnOpenInputForm = document.getElementById("inputForm");
 
 document.addEventListener('mousedown', checkCloseForm);
 
+const bc = new BroadcastChannel('test_channel');
+bc.addEventListener('message', function (e) {
+    console.log(e);
+})
 
 btnOpenInputForm.addEventListener('click', async () => {
     if (!(localStorage.getItem('entered') === "true")){
@@ -13,6 +17,11 @@ btnOpenInputForm.addEventListener('click', async () => {
         exitStatus()
     }
 });
+
+
+bc.onmessage = (event) => {
+    console.log(event);
+};
 
 function checkCloseForm(event) {
     if(event.target.closest('.form') === null && btnOpenInputForm.disabled){
@@ -31,24 +40,32 @@ function closeForm() {
 }
 
 function exitStatus(){
-    localStorage.setItem('entered', "false")
+    window.localStorage.setItem('entered', "false");
     btnOpenInputForm.innerText = "Войти"
     localStorage.setItem('nicknameText', "");
     nickname.innerText = localStorage.getItem('nicknameText');
+    document.cookie = '1wertyuiopoiuytrew=2weretryuy'
+    alert(document.cookie)
 }
 
 function openStatus(){
+
     btnOpenInputForm.innerText = "Выйти"
     nickname.innerText = localStorage.getItem('nicknameText');
 }
-
-localStorage.setItem('nicknameText', "");
-localStorage.setItem('entered', "true");
+window["entered"] = "true"
+window.localStorage.setItem('nicknameText', "");
+window.localStorage.setItem('entered', "true");
 
 // let nicknameText = "default"
 // let entered = true;
+let data = {entered:[], nicknameText:[]};
+window.localStorage.getItem('entered');
 
 window.onload = function(){
+    let v = localStorage.getItem("1") + 1
+    localStorage.setItem("1", v)
+    console.log(document.cookie)
     if (localStorage.getItem('entered') === "true"){
         openStatus()
     }
@@ -56,6 +73,13 @@ window.onload = function(){
         exitStatus()
     }
 }
+
+console.log(localStorage.getItem("1"))
+let q = localStorage.getItem("1")
+localStorage.setItem("1", q)
+console.log(localStorage.getItem("1"))
+
+
 
 
 const applicantForm = document.getElementById('form__box')
