@@ -20,15 +20,15 @@ const fetchDataTask = async (subject) => {
 }
 
 async function getTask(subject) {
-    const response =
-        {
-            id: 2,
-            name: "площадь фигуры",
-            description: "найти площадь треугольника со сторонами 3,4,5",
-            lesson: "математика",
-            difficultyId: 1
-        }
-    // await fetchDataTask(subject);
+    const response =    await fetchDataTask(subject);
+        // {
+        //     id: 2,
+        //     name: "площадь фигуры",
+        //     description: "найти площадь треугольника со сторонами 3,4,5",
+        //     lesson: "математика",
+        //     difficultyId: 1
+        // }
+
     if (!response) {
         return null;
     }
