@@ -4,10 +4,14 @@ const btnOpenInputForm = document.getElementById("inputForm");
 
 document.addEventListener('mousedown', checkCloseForm);
 
-const bc = new BroadcastChannel('test_channel');
-bc.addEventListener('message', function (e) {
-    console.log(e);
-})
+// const bc = new BroadcastChannel('test_channel');
+// bc.addEventListener('message', function (e) {
+//     console.log(e);
+// })
+// bc.onmessage = (event) => {
+//     console.log(event);
+// };
+
 
 btnOpenInputForm.addEventListener('click', async () => {
     if (!(localStorage.getItem('entered') === "true")){
@@ -17,11 +21,6 @@ btnOpenInputForm.addEventListener('click', async () => {
         exitStatus()
     }
 });
-
-
-bc.onmessage = (event) => {
-    console.log(event);
-};
 
 function checkCloseForm(event) {
     if(event.target.closest('.form') === null && btnOpenInputForm.disabled){
@@ -40,33 +39,28 @@ function closeForm() {
 }
 
 function exitStatus(){
-    window.localStorage.setItem('entered', "false");
+    localStorage.setItem('entered', "false");
     btnOpenInputForm.innerText = "Войти"
     localStorage.setItem('nicknameText', "");
     nickname.innerText = localStorage.getItem('nicknameText');
-    document.cookie = '1wertyuiopoiuytrew=2weretryuy'
-    alert(document.cookie)
 }
 
 function openStatus(){
-
     btnOpenInputForm.innerText = "Выйти"
     nickname.innerText = localStorage.getItem('nicknameText');
 }
-window["entered"] = "true"
-window.localStorage.setItem('nicknameText', "");
-window.localStorage.setItem('entered', "true");
 
-// let nicknameText = "default"
-// let entered = true;
-let data = {entered:[], nicknameText:[]};
-window.localStorage.getItem('entered');
+let name = localStorage.getItem('nicknameText');
+localStorage.setItem('nicknameText', name);
+let entered = localStorage.getItem('entered');
+localStorage.setItem('entered', entered);
+
 
 window.onload = function(){
-    let v = localStorage.getItem("1") + 1
-    localStorage.setItem("1", v)
-    console.log(document.cookie)
-    if (localStorage.getItem('entered') === "true"){
+    // console.log(entered)
+    // let v = localStorage.getItem("1") + 1
+    // localStorage.setItem("1", v)
+    if (entered === "true"){
         openStatus()
     }
     else {
@@ -74,13 +68,10 @@ window.onload = function(){
     }
 }
 
-console.log(localStorage.getItem("1"))
-let q = localStorage.getItem("1")
-localStorage.setItem("1", q)
-console.log(localStorage.getItem("1"))
-
-
-
+// console.log(localStorage.getItem("1"))
+// let q = localStorage.getItem("1")
+// localStorage.setItem("1", q)
+// console.log(localStorage.getItem("1"))
 
 const applicantForm = document.getElementById('form__box')
 applicantForm.addEventListener('submit', handleFormSubmit)
