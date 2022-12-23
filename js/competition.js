@@ -48,14 +48,23 @@ const informatics = document.getElementById("informatics");
 const answerBtn = document.getElementById("get-answer");
 const answerInput = document.getElementById("input-answer");
 
-answerBtn.addEventListener('click', async () => {
+// answerBtn.addEventListener('click', async () => {
+//     task.answer = answerInput.value;
+//     console.log(task.answer, "task.answer")
+//     console.log(answerInput.value, "answerInput.value")
+//     sendRequest("PUT", `https://localhost:7238/task/check`, task)
+//         .then(data => console.log(data))
+//         .catch(err => console.error(err))
+// });
+
+async function sendAnswer() {
     task.answer = answerInput.value;
     console.log(task.answer, "task.answer")
     console.log(answerInput.value, "answerInput.value")
     sendRequest("PUT", `https://localhost:7238/task/check`, task)
         .then(data => console.log(data))
         .catch(err => console.error(err))
-});
+}
 
 maths.addEventListener('click', async () => {
     const response = await getTask("математика")
@@ -81,7 +90,7 @@ const renderTask = (task) => {
                         <section class="competition">
                             <p class="title">Вы участвуете в соревновании по ${task.subject}</p>
                             <p class="text">${task.description}</p>
-                                <input type="text" placeholder="Ответ:" class="input-answer" id="input-answer">
+                                <input type="text" onclick="sendAnswer" placeholder="Ответ:" class="input-answer" id="input-answer">
                                 <div class="btn-competition">
                                       <button class="registration" id="get-answer">
                                             Отправить
