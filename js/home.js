@@ -82,9 +82,7 @@ async function handleFormSubmit(event) {
     event.preventDefault()
     let data = serializeForm(event.target)
     const response = await sendData(data)
-
-
-    if (response.status < 400) {
+    if (response) {
         sessionStorage.setItem('entered', "true");
         render(response)
         sessionStorage.setItem('token', response);

@@ -75,6 +75,7 @@ informatics.addEventListener('click', async () => {
 
 
 const renderTask = (task) => {
+    answerBtn.style.display = "block";
     main.innerHTML = "";
     main.innerHTML = `<div class="container">
                         <section class="competition">

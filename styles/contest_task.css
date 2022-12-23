@@ -34,6 +34,7 @@
 /*}*/
 
 .input-answer {
+    display: none;
     /*background: transparent;*/
     width: 327px;
     height: 44px;
