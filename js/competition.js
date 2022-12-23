@@ -15,7 +15,7 @@ const fetchDataTask = async (subject) => {
             fetch(`https://localhost:7238/task?subject=${subject}`);
         return await result.json();
     } catch (error) {
-        msg.textContent = "error";
+        console.error("error");
     }
 }
 
@@ -37,7 +37,7 @@ async function getTask(subject) {
     task.name = response.name;
     task.difficultyId = response.difficultyId;
     task.description = response.description;
-    task.lesson = response.lesson;
+    task.subject = response.subject;
     task.answer = 0;
     console.log(task)
     return response
@@ -45,9 +45,20 @@ async function getTask(subject) {
 
 const maths = document.getElementById("maths");
 const informatics = document.getElementById("informatics");
+const answerBtn = document.getElementById("get-answer");
+const answerInput = document.getElementById("input-answer");
+
+answerBtn.addEventListener('click', async () => {
+    task.answer = answerInput.value;
+    console.log(task.answer, "task.answer")
+    console.log(answerInput.value, "answerInput.value")
+    sendRequest("PUT", `https://localhost:7238/task/check`, task)
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
+});
 
 maths.addEventListener('click', async () => {
-    const response = await getTask("Maths")
+    const response = await getTask("математика")
     if (!response) {
         return null;
     }
@@ -55,30 +66,36 @@ maths.addEventListener('click', async () => {
 });
 
 informatics.addEventListener('click', async () => {
-    const response = await getTask("Informatics")
+    const response = await getTask("информатика")
     if (!response) {
         return null;
     }
     renderTask(response)
 });
 
+
 const renderTask = (task) => {
     main.innerHTML = "";
     main.innerHTML = `<div class="container">
                         <section class="competition">
-                            <p class="title">Вы участвуете в соревновании по ${task.lesson}</p>
+                            <p class="title">Вы участвуете в соревновании по ${task.subject}</p>
                             <p class="text">${task.description}</p>
-                            <ul class="answers-list">
-                                  <label for="name">Введите ответ:</label>
-                                  <input
-                                          type = "text"
-                                          id = "name"
-                                          name = "answer"
-                                          required
-                                          minlength = "4"
-                                          maxlength = "8"
-                                          size = "10"
-                                  >
+                                <input type="text" placeholder="Ответ:" class="input-answer" id="input-answer">
+                                <div class="btn-competition">
+                                      <button class="registration" id="get-answer">
+                                            Отправить
+                                      </button>
+                                 </div>
+<!--                                  <label for="name">Введите ответ:</label>-->
+<!--                                  <input-->
+<!--                                          type = "text"-->
+<!--                                          id = "name"-->
+<!--                                          name = "answer"-->
+<!--                                          required-->
+<!--                                          minlength = "4"-->
+<!--                                          maxlength = "8"-->
+<!--                                          size = "10"-->
+<!--                                  >-->
 <!--                                <li class="answer">-->
 <!--                                    <button id="maths-1" onclick="addAnswer_1()" title="1">Вариант 1</button>-->
 <!--                                </li>-->
@@ -91,56 +108,31 @@ const renderTask = (task) => {
 <!--                                <li class="answer">-->
 <!--                                    <button id="maths-4" onclick="addAnswer_4()" title="4">Вариант 4</button>-->
 <!--                                </li>-->
-                            </ul>
                         </section>
                        </div>`
 }
 
 
-function addAnswer_1(){
-    task.answer = 1
-    console.log(task)
+function sendRequest(method, url, body=null) {
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': sessionStorage.getItem('token'),
+    }
+
+    return fetch(url, {
+        method: method,
+        body: JSON.stringify(body),
+        headers: headers,
+    }).then(response => {
+        if (response.ok) {
+            return response.json()
+        }
+
+        return response.json().then(error => {
+            const e = new Error("Что-то пошло не так")
+            e.data = error
+            throw e
+        })
+    })
 }
 
-function addAnswer_2(){
-    task.answer = 2
-    console.log(task)
-}
-
-function addAnswer_3(){
-    task.answer = 3
-    console.log(task)
-}
-
-function addAnswer_4(){
-    task.answer = 4
-    console.log(task)
-}
-
-const requestURL = "url"
-
-// function sendRequest(method, url, body=null) {
-//     const headers = {
-//         'Content-Type': 'application/json'
-//     }
-//
-//     return fetch(url, {
-//         method: method,
-//         body: JSON.stringify(body),
-//         headers: headers,
-//     }).then(response => {
-//         if (response.ok) {
-//             return response.json()
-//         }
-//
-//         return response.json().then(error => {
-//             const e = new Error("Что-то пошло не так")
-//             e.data = error
-//             throw e
-//         })
-//     })
-// }
-//
-// sendRequest("POST", requestURL, task)
-//     .then(data => console.log(data))
-//     .catch(err => console.error(err))

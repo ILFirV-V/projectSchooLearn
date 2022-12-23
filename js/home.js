@@ -6,9 +6,8 @@ document.addEventListener('mousedown', checkCloseForm);
 
 
 btnOpenInputForm.addEventListener('click', async () => {
-    if (!entered){
-        inputForm.style.display = "flex";
-        btnOpenInputForm.disabled = true;
+    if (!(sessionStorage.getItem('entered') === "true")){
+        openForm()
     }
 });
 
@@ -18,6 +17,11 @@ function checkCloseForm(event) {
     }
 }
 
+function openForm() {
+    inputForm.style.display = "flex";
+    btnOpenInputForm.disabled = true;
+}
+
 function closeForm() {
     inputForm.style.display = 'none';
     btnOpenInputForm.disabled = false;
@@ -25,19 +29,23 @@ function closeForm() {
 
 function exitStatus(){
     btnOpenInputForm.innerText = "Войти"
-    nickname.innerText = "";
+    sessionStorage.setItem('nicknameText', "");
+    nickname.innerText = sessionStorage.getItem('nicknameText');
 }
 
 function openStatus(){
     btnOpenInputForm.innerText = "Выйти"
-    nickname.innerText = nicknameText;
+    nickname.innerText = sessionStorage.getItem('nicknameText');
 }
 
-let nicknameText = "default"
-let entered = false;
+sessionStorage.setItem('nicknameText', "");
+sessionStorage.setItem('entered', "false");
+
+// let nicknameText = "default"
+// let entered = true;
 
 window.onload = function(){
-    if (entered){
+    if (sessionStorage.getItem('entered') === "true"){
         openStatus()
     }
     else {
@@ -60,13 +68,12 @@ function serializeForm(formNode) {
         .map((element) => {
             if (element.name === "login") {
                 data.login = element.value
-                nicknameText = element.value
+                sessionStorage.setItem('nicknameText', element.value);
             }
             else{
                 data.password = element.value
             }
         })
-    console.log(data)
     return data;
 }
 
@@ -75,12 +82,15 @@ async function handleFormSubmit(event) {
     event.preventDefault()
     let data = serializeForm(event.target)
     const response = await sendData(data)
-    if (response.ok) {
-        entered = true;
+
+
+    if (response.status < 400) {
+        sessionStorage.setItem('entered', "true");
         render(response)
+        sessionStorage.setItem('token', response);
     }
     else{
-        nicknameText = ""
+        sessionStorage.setItem('nicknameText', "");
     }
 }
 
