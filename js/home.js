@@ -88,7 +88,7 @@ async function sendData(data) {
     const result = await fetch('https://localhost:7238/api/Token/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: data,
+        body: JSON.stringify(data),
     })
     return await result.json();
 }
