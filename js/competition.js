@@ -12,7 +12,7 @@ let task = {
 const fetchDataTask = async (subject) => {
     try {
         const result = await
-            fetch(`url`);
+            fetch(`https://localhost:7238/task?subject=${subject}`);
         return await result.json();
     } catch (error) {
         msg.textContent = "error";
@@ -21,14 +21,14 @@ const fetchDataTask = async (subject) => {
 
 async function getTask(subject) {
     const response =
-        {
-            id: 2,
-            name: "площадь фигуры",
-            description: "найти площадь треугольника со сторонами 3,4,5",
-            lesson: "математика",
-            difficultyId: 1
-        }
-    // await fetchDataTask(subject);
+        // {
+        //     id: 2,
+        //     name: "площадь фигуры",
+        //     description: "найти площадь треугольника со сторонами 3,4,5",
+        //     lesson: "математика",
+        //     difficultyId: 1
+        // }
+    await fetchDataTask(subject);
     if (!response) {
         return null;
     }
@@ -69,18 +69,28 @@ const renderTask = (task) => {
                             <p class="title">Вы участвуете в соревновании по ${task.lesson}</p>
                             <p class="text">${task.description}</p>
                             <ul class="answers-list">
-                                <li class="answer">
-                                    <button id="maths-1" onclick="addAnswer_1()" title="1">Вариант 1</button>
-                                </li>
-                                <li class="answer">
-                                    <button id="maths-2" onclick="addAnswer_2()" title="2">Вариант 2</button>
-                                </li>
-                                <li class="answer">
-                                    <button id="maths-3" onclick="addAnswer_3()" title="3">Вариант 3</button>
-                                </li>
-                                <li class="answer">
-                                    <button id="maths-4" onclick="addAnswer_4()" title="4">Вариант 4</button>
-                                </li>
+                                  <label for="name">Введите ответ:</label>
+                                  <input
+                                          type = "text"
+                                          id = "name"
+                                          name = "answer"
+                                          required
+                                          minlength = "4"
+                                          maxlength = "8"
+                                          size = "10"
+                                  >
+<!--                                <li class="answer">-->
+<!--                                    <button id="maths-1" onclick="addAnswer_1()" title="1">Вариант 1</button>-->
+<!--                                </li>-->
+<!--                                <li class="answer">-->
+<!--                                    <button id="maths-2" onclick="addAnswer_2()" title="2">Вариант 2</button>-->
+<!--                                </li>-->
+<!--                                <li class="answer">-->
+<!--                                    <button id="maths-3" onclick="addAnswer_3()" title="3">Вариант 3</button>-->
+<!--                                </li>-->
+<!--                                <li class="answer">-->
+<!--                                    <button id="maths-4" onclick="addAnswer_4()" title="4">Вариант 4</button>-->
+<!--                                </li>-->
                             </ul>
                         </section>
                        </div>`
