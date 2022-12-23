@@ -55,7 +55,7 @@ async function getTask(subject) {
 
 const maths = document.getElementById("maths");
 const informatics = document.getElementById("informatics");
-const result = document.getElementById("result");
+
 
 
 let subject = ""
@@ -70,15 +70,29 @@ let subject = ""
 // });
 
 async function sendAnswer() {
-    const answerInput = document.getElementById("input-answer");
-    console.log(answerInput)
+    try {
+        const answerInput = document.getElementById("input-answer");
+        task.answer = answerInput.value;
+        console.log(task)
+        const result = true
+            // await sendRequest("PUT", 'https://localhost:7238/task/check', task);
+        renderAnswer(result)
+    } catch (error) {
+        console.error(error);
+    }
+    // sendRequest("PUT", 'https://localhost:7238/task/check', task)
+    //     .then(data_result => console.log(data_result))
+    //     .catch(err => console.error(err))
+}
 
-    task.answer = answerInput.value;
-    console.log(task.answer)
-    console.log(task)
-    sendRequest("PUT", 'https://localhost:7238/task/check', task)
-        .then(data_result => result.innerText = data_result)
-        .catch(err => console.error(err))
+function renderAnswer(answer) {
+    let result = document.getElementById("result");
+    if (answer === "true"){
+        result.innerText = "true";
+    }
+    else{
+        result.innerText = "false";
+    }
 }
 
 maths.addEventListener('click', async () => {
@@ -116,7 +130,7 @@ const renderTask = (task) => {
                             <p class="text">${task.description}</p>
                                 <input type="text" 
                                  placeholder="Ответ:" class="input-answer" id="input-answer">
-                                 <p id="result">результат</p>
+                                 <p class="result" id="result">результат</p>
                                 <div class="btn-competition">
                                       <button class="registration" id="get-answer" onclick="sendAnswer()">
                                             Отправить
