@@ -188,109 +188,45 @@ const render = (data) => {
 // }
 //
 //
-const resultScors = document.getElementById("result");
+// const resultScors = document.getElementById("result");
 //
 //
-const fetchDataResults = async () => {
-    try {
-        const result = await
-            fetch(`https://localhost:7238/rating/global?count=10`, {
-                method: 'GET',
-                headers: {
-                    Authorization: "Bearer " + token
-                }
-            });
-        return await result.json();
-    } catch (error) {
-        console.error(error);
-    }
-}
+// const fetchDataResults = async () => {
+//     try {
+//         const result = await
+//             fetch(`https://localhost:7238/rating/global?count=10`, {
+//                 method: 'GET',
+//                 headers: {
+//                     Authorization: "Bearer " + token
+//                 }
+//             });
+//         return await result.json();
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
 
-async function getResults() {
-    const results = await fetchDataResults();
-    //     [
-    //     {
-    //         "id": 3,
-    //         "name": "arman",
-    //         "scores": 19
-    //     },
-    //     {
-    //         "id": 5,
-    //         "name": "anny",
-    //         "scores": 17
-    //     },
-    //     {
-    //         "id": 13,
-    //         "name": "dmitriy",
-    //         "scores": 17
-    //     },
-    //     {
-    //         "id": 4,
-    //         "name": "nikita",
-    //         "scores": 16
-    //     },
-    //     {
-    //         "id": 8,
-    //         "name": "lana",
-    //         "scores": 13
-    //     },
-    //     {
-    //         "id": 7,
-    //         "name": "igor",
-    //         "scores": 11
-    //     },
-    //     {
-    //         "id": 11,
-    //         "name": "igor",
-    //         "scores": 11
-    //     },
-    //     {
-    //         "id": 9,
-    //         "name": "lauren",
-    //         "scores": 6
-    //     },
-    //     {
-    //         "id": 6,
-    //         "name": "masha",
-    //         "scores": 4
-    //     },
-    //     {
-    //         "id": 10,
-    //         "name": "gocha",
-    //         "scores": 4
-    //     },
-    //     {
-    //         "id": 12,
-    //         "name": "marina",
-    //         "scores": 4
-    //     },
-    //     {
-    //         "id": 14,
-    //         "name": "vladimir",
-    //         "scores": 2
-    //     }
-    // ];
-    // console.log(results)
+// async function getResults() {
+//     const results = await fetchDataResults();
+//     for (let i in results){
+//         renderUl(i, results[i])
+//     }
+// }
 
-    for (let i in results){
-        renderUl(i, results[i])
-    }
-}
-
-function renderUl(number, result){
-    console.log(result)
-    let ul = document.createElement('ul');
-    let li1 = document.createElement('li');
-    li1.innerHTML = parseInt(number) + 1;
-    ul.append(li1);
-    let li2 = document.createElement('li');
-    li2.innerHTML = result.login[0].toUpperCase() + result.login.slice(1);
-    ul.append(li2);
-    let li3 = document.createElement('li');
-    li3.innerHTML = result.scores;
-    ul.append(li3);
-    resultScors.append(ul);
-}
+// function renderUl(number, result){
+//     console.log(result)
+//     let ul = document.createElement('ul');
+//     let li1 = document.createElement('li');
+//     li1.innerHTML = parseInt(number) + 1;
+//     ul.append(li1);
+//     let li2 = document.createElement('li');
+//     li2.innerHTML = result.login[0].toUpperCase() + result.login.slice(1);
+//     ul.append(li2);
+//     let li3 = document.createElement('li');
+//     li3.innerHTML = result.scores;
+//     ul.append(li3);
+//     resultScors.append(ul);
+// }
 
 
 const main = document.querySelector("main");

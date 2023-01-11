@@ -90,3 +90,75 @@
 //     }
 //     resultScors.append(ul);
 // }
+const resultScors = document.getElementById("result");
+const overallScoreRating = document.getElementById("overallScoreRating");
+const mathScoreRating = document.getElementById("mathScoreRating");
+const informaticsScoreRating = document.getElementById("informaticsScoreRating");
+
+overallScoreRating.addEventListener("click", async () => {
+    const response = await fetchDataResults("общий");
+    if (!response) {
+        return null;
+    }
+    for (let i in response){
+        renderUl(i, response[i])
+    }
+});
+
+mathScoreRating.addEventListener("click", async () => {
+    const response = await fetchDataResults("математика");
+    if (!response) {
+        return null;
+    }
+    for (let i in response){
+        renderUl(i, response[i])
+    }
+});
+
+informaticsScoreRating.addEventListener("click", async () => {
+    const response = await fetchDataResults("информатика");
+    if (!response) {
+        return null;
+    }
+    for (let i in response){
+        renderUl(i, response[i])
+    }
+});
+
+//
+// async function getResults(subject) {
+//     const results = await fetchDataResults(subject);
+//     for (let i in results){
+//         renderUl(i, results[i])
+//     }
+// }
+
+function renderUl(number, result){
+    console.log(result)
+    let ul = document.createElement('ul');
+    let li1 = document.createElement('li');
+    li1.innerHTML = parseInt(number) + 1;
+    ul.append(li1);
+    let li2 = document.createElement('li');
+    li2.innerHTML = result.login[0].toUpperCase() + result.login.slice(1);
+    ul.append(li2);
+    let li3 = document.createElement('li');
+    li3.innerHTML = result.scores;
+    ul.append(li3);
+    resultScors.append(ul);
+}
+
+const fetchDataResults = async (subject) => {
+    try {
+        const result = await
+            fetch(`https://localhost:7238/rating/global?count=10`, {
+                method: 'GET',
+                headers: {
+                    Authorization: "Bearer " + token
+                }
+            });
+        return await result.json();
+    } catch (error) {
+        console.error(error);
+    }
+}
