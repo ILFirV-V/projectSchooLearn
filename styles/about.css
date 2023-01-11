@@ -103,10 +103,26 @@
 
 }
 
+.subject {
+    width: 215px;
+    height: 47px;
+    left: 287px;
+    top: 1291px;
+    background: #B5FBD6;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    display: inline-block;
+    padding: 10px 25px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #0A0C1B;
+}
+
 .question {
     font-weight: 400;
-    font-size: 46px;
-    line-height: 56px;
+    font-size: 32px;
+    line-height: 39px;
     text-align: center;
 
     color: #080F1D;
@@ -123,8 +139,8 @@
 
 .answer {
     font-weight: 400;
-    font-size: 50px;
-    line-height: 68px;
+    font-size: 38px;
+    line-height: 46px;
     text-align: center;
 
     color: #000000;
@@ -133,8 +149,8 @@
 
 .prize {
     font-weight: 900;
-    font-size: 50px;
-    line-height: 68px;
+    font-size: 46px;
+    line-height: 56px;
     text-align: center;
 
     color: #000000;
@@ -153,8 +169,8 @@
 
 .wishes {
     font-weight: 400;
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 32px;
+    line-height: 39px;
 
     color: #000000;
     margin: 50px auto;

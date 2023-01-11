@@ -58,7 +58,7 @@ localStorage.setItem('entered', entered);
 
 
 window.onload = async function(){
-    await getResults();
+
     // console.log(entered)
     // let v = localStorage.getItem("1") + 1
     // localStorage.setItem("1", v)
@@ -68,6 +68,7 @@ window.onload = async function(){
     else {
         exitStatus()
     }
+    await getResults();
 }
 
 // console.log(localStorage.getItem("1"))
@@ -103,6 +104,7 @@ async function handleFormSubmit(event) {
     event.preventDefault()
     let data = serializeForm(event.target)
     const response = await sendData(data)
+    console.log(response)
     if (response) {
         localStorage.setItem('entered', "true");
         render(response)
@@ -114,13 +116,17 @@ async function handleFormSubmit(event) {
 }
 
 async function sendData(data) {
-    const result = await fetch('https://localhost:7238/api/Token/', {
+    const result = await fetch('https://localhost:7238/token/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
     })
     console.log(result)
-    return await result.json();
+    if (result.ok) {
+        return await result.json();
+    } else {
+        return false
+    }
 }
 
 const render = (data) => {
@@ -268,7 +274,6 @@ function renderUl(number, result){
     let li3 = document.createElement('li');
     li3.innerHTML = result.scores;
     ul.append(li3);
-
     resultScors.append(ul);
 }
 

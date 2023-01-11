@@ -58,15 +58,16 @@
 
 .form__button {
     padding: 10px;
-    border-radius: 10px;
     font-size: 1.2em;
     width: 50%;
     height: 50px;
-    background: dodgerblue;
-    color: #fff;
+    background: #B5FBD6;
+    color: #000000;
     border: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
 
 .form__button:hover {
-    background: linear-gradient(45deg, greenyellow, dodgerblue);
+    background: linear-gradient(82.66deg, #B5FBD6 14.42%, #D3AAF8);
 }

@@ -20,7 +20,7 @@ const fetchDataTask = async (subject) => {
 }
 
 async function getTask(subject) {
-    const response =    await fetchDataTask(subject);
+    const response = await fetchDataTask(subject);
         // {
         //     id: 2,
         //     name: "площадь фигуры",
@@ -73,9 +73,7 @@ async function sendAnswer() {
     try {
         const answerInput = document.getElementById("input-answer");
         task.answer = answerInput.value;
-        console.log(task)
-        const result = true
-            // await sendRequest("PUT", 'https://localhost:7238/task/check', task);
+        const result = await sendRequest("PUT", 'https://localhost:7238/task/check', task);
         renderAnswer(result)
     } catch (error) {
         console.error(error);
@@ -87,11 +85,14 @@ async function sendAnswer() {
 
 function renderAnswer(answer) {
     let result = document.getElementById("result");
-    if (answer === "true"){
-        result.innerText = "true";
-    }
-    else{
-        result.innerText = "false";
+    result.innerText = answer? "Верно" : "Неверно";
+    if (answer) {
+        result.innerText = "Верно";
+        result.classList.add("true");
+    } else {
+
+        result.innerText = "Неверно";
+        result.classList.add("false");
     }
 }
 
@@ -127,16 +128,18 @@ const renderTask = (task) => {
     main.innerHTML = `<div class="container">
                         <section class="competition">
                             <p class="title">Вы участвуете в соревновании по ${task.subject}</p>
+                            <p class="difficulty text"> Уровень: ${task.difficulty} </p>
                             <p class="text">${task.description}</p>
-                                <input type="text" 
+                            <div class="answer_box">                            <input type="text" 
                                  placeholder="Ответ:" class="input-answer" id="input-answer">
-                                 <p class="result" id="result">результат</p>
+                                 <p class="result" id="result"></p></div>
+
                                 <div class="btn-competition">
                                       <button class="registration" id="get-answer" onclick="sendAnswer()">
                                             Отправить
                                       </button>
-                                      <button class="registration" id="getNewTask" onclick="getNewTask()">
-                                            следующее
+                                      <button class="registration next" id="getNewTask" onclick="getNewTask()">
+                                            Следующее
                                       </button>
                                  </div>
 <!--                                  <label for="name">Введите ответ:</label>-->

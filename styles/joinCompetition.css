@@ -4,7 +4,6 @@
 }
 
 .competition .title {
-    width: 500px;
     font-weight: 700;
     font-size: 52px;
     line-height: 63px;
@@ -22,3 +21,52 @@
 
     color: #080F1D;
 }
+
+.competition .difficulty {
+    color: #B169F3;
+    margin: 20px 0;
+}
+
+.competition input{
+    margin: auto 0;
+    width: 540px;
+}
+
+.competition .answer_box {
+    margin: 25px 0;
+    display: flex;
+    justify-content: start;
+}
+
+.competition .result {
+    margin: auto 25px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.competition .true {
+    color: #14FF00;
+}
+
+.competition .false {
+    color: #FF0000;
+}
+
+.competition .next {
+    margin-left: 100px;
+    background: #D3AAF8;
+}
+
+.competition input {
+    top: 0;
+    left: 0;
+    border: 2px solid #000;
+    outline: none;
+    background: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.2em;
+}
+
+
