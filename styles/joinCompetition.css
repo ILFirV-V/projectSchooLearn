@@ -13,17 +13,26 @@
     margin-bottom: 40px;
 }
 
-.competition .text {
+.competition .text-1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+
+    color: #B169F3;
+}
+
+.competition .text-2 {
     font-style: normal;
     font-weight: 400;
-    font-size: 46px;
-    line-height: 56px;
+    font-size: 20px;
+    line-height: 24px;
 
     color: #080F1D;
 }
 
+
 .competition .difficulty {
-    color: #B169F3;
     margin: 20px 0;
 }
 

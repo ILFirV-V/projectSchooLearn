@@ -1,0 +1,48 @@
+.open_btn_form-result {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    height: 32px;
+    color: #000000;
+
+    padding: 5px 30px;
+
+    background: linear-gradient(82.66deg, #B5FBD6 14.42%, #D3AAF8 88.67%);
+    border: 1px solid #C792F8;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+
+.results_btn_box {
+    position: absolute;
+    /*display: none;*/
+    /*right: 0;*/
+    /*width: 600px;*/
+    z-index: 1;
+    padding: 25px 0;
+    border-radius: 20px;
+    margin-right: 125px;
+
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+
+    color: #000000;
+}
+
+/*.form-competition form p {*/
+/*    margin-bottom: 25px;*/
+/*}*/
+
+.results_btn_box button {
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    border: 0;
+    color: #000000;
+}

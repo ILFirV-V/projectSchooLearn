@@ -90,6 +90,9 @@
 //     }
 //     resultScors.append(ul);
 // }
+
+
+const personalResult = document.getElementById("personalResult");
 const resultScors = document.getElementById("result");
 const overallScoreRating = document.getElementById("overallScoreRating");
 const mathScoreRating = document.getElementById("mathScoreRating");
@@ -102,10 +105,11 @@ overallScoreRating.addEventListener("click", async () => {
         "            <li>Баллы</li>\n" +
         "          </ul>"
     const response = await fetchDataResults();
-    console.log(response)
-    if (!response) {
+    const responsePersonalResult = await fetchDataPersonalResult();
+    if (!response || !responsePersonalResult) {
         return null;
     }
+    personalResult.innerHTML = responsePersonalResult.scores
     for (let i in response){
         renderUl(i, response[i])
     }
@@ -118,10 +122,11 @@ mathScoreRating.addEventListener("click", async () => {
         "            <li>Баллы</li>\n" +
         "          </ul>"
     const response = await fetchDataResults("математика");
-    console.log(response)
-    if (!response) {
+    const responsePersonalResult = await fetchDataPersonalResult("математика");
+    if (!response || !responsePersonalResult) {
         return null;
     }
+    personalResult.innerHTML = responsePersonalResult.scores
     for (let i in response){
         renderUl(i, response[i])
     }
@@ -134,10 +139,11 @@ informaticsScoreRating.addEventListener("click", async () => {
         "            <li>Баллы</li>\n" +
         "          </ul>"
     const response = await fetchDataResults("информатика");
-    console.log(response)
-    if (!response) {
+    const responsePersonalResult = await fetchDataPersonalResult("информатика");
+    if (!response || !responsePersonalResult) {
         return null;
     }
+    personalResult.innerHTML = responsePersonalResult.scores
     for (let i in response){
         renderUl(i, response[i])
     }
@@ -152,7 +158,6 @@ informaticsScoreRating.addEventListener("click", async () => {
 // }
 
 function renderUl(number, result){
-    console.log(result)
     let ul = document.createElement('ul');
     let li1 = document.createElement('li');
     li1.innerHTML = parseInt(number) + 1;
@@ -177,6 +182,21 @@ const fetchDataResults = async (subject=`global`) => {
         console.log(resultSubject)
         const result = await
             fetch(`http://mnyouone-001-site1.ctempurl.com/rating/${resultSubject}?count=10 `, {
+                method: 'GET',
+                headers: {
+                    Authorization: "Bearer " + token
+                }
+            });
+        return await result.json();
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const fetchDataPersonalResult = async (subject) => {
+    try {
+        const result = await
+            fetch(`http://mnyouone-001-site1.ctempurl.com/rating/self`, {
                 method: 'GET',
                 headers: {
                     Authorization: "Bearer " + token

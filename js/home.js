@@ -365,8 +365,8 @@ const renderTask = (task) => {
     main.innerHTML = `<div class="container">
                         <section class="competition">
                             <p class="title">Вы участвуете в соревновании по ${task.subject}</p>
-                            <p class="difficulty text"> Уровень: ${task.difficulty} </p>
-                            <p class="text">${task.description}</p>
+                            <p class="difficulty text-1"> Уровень: ${task.difficulty} </p>
+                            <p class="text-2">${task.description}</p>
                             <div class="answer_box">                            <input type="text" 
                                  placeholder="Ответ:" class="input-answer" id="input-answer">
                                  <p class="result" id="result"></p></div>

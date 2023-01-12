@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;900&display=swap" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
   <link href="styles/results.css" rel="stylesheet">
+  <link href="styles/resultForm.css" rel="stylesheet">
 </head>
 <body>
 <header class="header">
@@ -59,7 +60,7 @@
             <span class="form__text">Пароль:</span>
           </label>
         </div>
-        <button class="form__button" type="submit">Отправить</button>
+        <button class="form__button" type="submit">Войти</button>
         <span class="msg"></span>
       </form>
     </div>
@@ -67,18 +68,31 @@
 </header>
 <main>
   <section class="container">
-    <h1 class="title-result">Рейтинг учеников</h1>
-    <div class="results_btn_box">
-      <button class="registration competition-participate" id="overallScoreRating">
-        Общий
-      </button>
-      <button class="registration competition-participate" id="mathScoreRating">
-        Математика
-      </button>
-      <button class="registration competition-participate" id="informaticsScoreRating">
-        Информатика
-      </button>
+    <div class="result-title-box">
+      <h1 class="title-result">Рейтинг учеников</h1>
     </div>
+    <div class="result-box">
+      <div>
+        <button class="open_btn_form-result" id="resultForm">
+          Фильтр
+        </button>
+        <div class="results_btn_box" id="results_btn_box">
+          <button id="overallScoreRating">
+            Общий
+          </button>
+          <button id="mathScoreRating">
+            Математика
+          </button>
+          <button id="informaticsScoreRating">
+            Информатика
+          </button>
+        </div>
+      </div>
+      <div class="personalResult">
+        Ваш балл: <p id="personalResult"></p>
+      </div>
+    </div>
+
     <div class="result_list">
       <div class="result_box" id="result">
           <ul>
@@ -117,6 +131,6 @@
 </footer>
 <script src="js/home.js"></script>
 <script src="js/result.js"></script>
-
+<script src="js/resultForm.js"></script>
 </body>
 </html>
