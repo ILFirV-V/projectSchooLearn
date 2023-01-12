@@ -179,7 +179,6 @@ const fetchDataResults = async (subject=`global`) => {
         } else {
             resultSubject += subject
         }
-        console.log(resultSubject)
         const result = await
             fetch(`http://mnyouone-001-site1.ctempurl.com/rating/${resultSubject}?count=10 `, {
                 method: 'GET',
@@ -195,8 +194,12 @@ const fetchDataResults = async (subject=`global`) => {
 
 const fetchDataPersonalResult = async (subject) => {
     try {
+        let sendSubject = ""
+        if (subject !== undefined){
+            sendSubject = "/?subject=" + subject
+        }
         const result = await
-            fetch(`http://mnyouone-001-site1.ctempurl.com/rating/self`, {
+            fetch(`http://mnyouone-001-site1.ctempurl.com/rating/self${sendSubject}`, {
                 method: 'GET',
                 headers: {
                     Authorization: "Bearer " + token

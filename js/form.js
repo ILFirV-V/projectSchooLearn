@@ -1,4 +1,4 @@
-0// const applicantForm = document.getElementById('form__box')
+// const applicantForm = document.getElementById('form__box')
 // applicantForm.addEventListener('submit', handleFormSubmit)
 //
 // function serializeForm(formNode) {
@@ -22,5 +22,3 @@
 //         body: JSON.stringify(data),
 //     })
 // }
-
-console.log("1", "2")

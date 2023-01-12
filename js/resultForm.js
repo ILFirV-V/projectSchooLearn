@@ -11,7 +11,7 @@ participateBtn.addEventListener('click', async () => {
     }
 });
 function participateCloseForm(event) {
-    if(event.target.closest('.form-competition') === null && participateBtn.disabled){
+    if(event.target.closest('.results_btn_box') === null && participateBtn.disabled){
         participateForm.style.display = 'none';
         participateBtn.disabled = false;
     }
