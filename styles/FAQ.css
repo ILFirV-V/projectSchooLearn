@@ -5,3 +5,32 @@
     margin-bottom: 100px;
 }
 
+.read_more:before {
+    color: #818181;
+    padding: 0 8px;
+    content: url('../image/FAQ/вопрос.svg');
+}
+
+dl {
+    list-style:  disc inside;
+}
+
+.faq_text {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 39px;
+    list-style:  disc inside;
+    color: #293835;
+}
+
+.faq_text-2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: #B169F3;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    margin-left: 70px;
+}
+
