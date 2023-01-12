@@ -2,6 +2,7 @@
     background: #D3AAF8;
     padding: 14px 50px;
     margin-top: 100px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .personalResult {
@@ -23,6 +24,7 @@
     padding: 30px 50px;
     background: #E6E6E6;
     height: 170px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .result_list {
@@ -59,7 +61,10 @@
 /*}*/
 
 .result_box {
-    padding: 80px 200px ;
+    width: 1224px;
+    padding: 80px 180px ;
+    background: #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .number {

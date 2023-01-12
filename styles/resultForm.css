@@ -17,7 +17,7 @@
 
 .results_btn_box {
     position: absolute;
-    display: none;
+    display: block;
     /*right: 0;*/
     /*width: 600px;*/
     z-index: 1;
