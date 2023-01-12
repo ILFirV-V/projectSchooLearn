@@ -126,7 +126,7 @@ async function handleFormSubmit(event) {
 }
 
 async function sendData(data) {
-    const result = await fetch('https://localhost:7238/token/create', {
+    const result = await fetch('http://mnyouone-001-site1.ctempurl.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -243,7 +243,7 @@ let task = {
 const fetchDataTask = async (subject) => {
     try {
         const result = await
-            fetch(`https://localhost:7238/task?subject=${subject}`, {
+            fetch(`http://mnyouone-001-site1.ctempurl.com/task/${subject}`, {
                 method: 'GET',
                 headers: {
                     Authorization: "Bearer " + token
@@ -309,7 +309,7 @@ async function sendAnswer() {
     try {
         const answerInput = document.getElementById("input-answer");
         task.answer = answerInput.value;
-        const result = await sendRequest("PUT", 'https://localhost:7238/task/check', task);
+        const result = await sendRequest("PUT", 'http://mnyouone-001-site1.ctempurl.com/task/check', task);
         renderAnswer(result)
     } catch (error) {
         console.error(error);

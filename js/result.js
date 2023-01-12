@@ -96,7 +96,13 @@ const mathScoreRating = document.getElementById("mathScoreRating");
 const informaticsScoreRating = document.getElementById("informaticsScoreRating");
 
 overallScoreRating.addEventListener("click", async () => {
-    const response = await fetchDataResults("общий");
+    resultScors.innerHTML = "<ul>\n" +
+        "            <li class=\"number\">№</li>\n" +
+        "            <li>Nickname</li>\n" +
+        "            <li>Баллы</li>\n" +
+        "          </ul>"
+    const response = await fetchDataResults();
+    console.log(response)
     if (!response) {
         return null;
     }
@@ -106,7 +112,13 @@ overallScoreRating.addEventListener("click", async () => {
 });
 
 mathScoreRating.addEventListener("click", async () => {
+    resultScors.innerHTML = "<ul>\n" +
+        "            <li class=\"number\">№</li>\n" +
+        "            <li>Nickname</li>\n" +
+        "            <li>Баллы</li>\n" +
+        "          </ul>"
     const response = await fetchDataResults("математика");
+    console.log(response)
     if (!response) {
         return null;
     }
@@ -116,7 +128,13 @@ mathScoreRating.addEventListener("click", async () => {
 });
 
 informaticsScoreRating.addEventListener("click", async () => {
+    resultScors.innerHTML = "<ul>\n" +
+        "            <li class=\"number\">№</li>\n" +
+        "            <li>Nickname</li>\n" +
+        "            <li>Баллы</li>\n" +
+        "          </ul>"
     const response = await fetchDataResults("информатика");
+    console.log(response)
     if (!response) {
         return null;
     }
@@ -140,7 +158,7 @@ function renderUl(number, result){
     li1.innerHTML = parseInt(number) + 1;
     ul.append(li1);
     let li2 = document.createElement('li');
-    li2.innerHTML = result.login[0].toUpperCase() + result.login.slice(1);
+    li2.innerHTML = result.login[0] + result.login.slice(1);
     ul.append(li2);
     let li3 = document.createElement('li');
     li3.innerHTML = result.scores;
@@ -148,10 +166,17 @@ function renderUl(number, result){
     resultScors.append(ul);
 }
 
-const fetchDataResults = async (subject) => {
+const fetchDataResults = async (subject=`global`) => {
     try {
+        let resultSubject = "subjects/"
+        if (subject === `global`){
+            resultSubject = "global"
+        } else {
+            resultSubject += subject
+        }
+        console.log(resultSubject)
         const result = await
-            fetch(`https://localhost:7238/rating/global?count=10`, {
+            fetch(`http://mnyouone-001-site1.ctempurl.com/rating/${resultSubject}?count=10 `, {
                 method: 'GET',
                 headers: {
                     Authorization: "Bearer " + token
